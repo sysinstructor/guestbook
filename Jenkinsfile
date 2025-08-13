@@ -122,13 +122,13 @@ pipeline {
             slackSend(tokenCredentialId: 'slack-token'
                 , channel: 'jenkins_test'
                 , color: 'good'
-                , message: 분산 "${JOB_NAME} (${BUILD_NUMBER}) 빌드가 성공적으로 끝났습니다. Details: (<${BUILD_URL} | here >)")
+                , message: ("분산 "${JOB_NAME} (${BUILD_NUMBER}) 빌드가 성공적으로 끝났습니다. Details: (<${BUILD_URL} | here >)")
         }
         failure { 
             slackSend(tokenCredentialId: 'slack-token'
                 , channel: 'jenkins_test'
                 , color: 'danger'
-                , message: "분산 ${JOB_NAME} (${BUILD_NUMBER}) 빌드가 실패하였습니다. Details: (<${BUILD_URL} | here >)")
+                , message: (""분산 ${JOB_NAME} (${BUILD_NUMBER}) 빌드가 실패하였습니다. Details: (<${BUILD_URL} | here >)")
     }
   }
 }
