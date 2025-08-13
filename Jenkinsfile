@@ -118,17 +118,17 @@ pipeline {
         }
     }
     post { 
-        success { 
+        success {
             slackSend(tokenCredentialId: 'slack-token'
-                , channel: 'jenkins_test'
+                , channel: '#교육'
                 , color: 'good'
-                , message: ("분산 "${JOB_NAME} (${BUILD_NUMBER}) 빌드가 성공적으로 끝났습니다. Details: (<${BUILD_URL} | here >)")
+                , message: "${JOB_NAME} (${BUILD_NUMBER}) 빌드가 성공적으로 끝났습니다. Details: (<${BUILD_URL} | here >)")
         }
-        failure { 
+        failure {
             slackSend(tokenCredentialId: 'slack-token'
-                , channel: 'jenkins_test'
+                , channel: '#교육'
                 , color: 'danger'
-                , message: (""분산 ${JOB_NAME} (${BUILD_NUMBER}) 빌드가 실패하였습니다. Details: (<${BUILD_URL} | here >)")
+                , message: "${JOB_NAME} (${BUILD_NUMBER}) 빌드가 실패하였습니다. Details: (<${BUILD_URL} | here >)")
     }
   }
 }
