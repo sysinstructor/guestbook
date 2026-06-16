@@ -14,7 +14,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-        - image: takytaky/app:v2
+        - image: takytaky/app:v3
           name: guestbook-ui
           ports:
             - containerPort: 80
